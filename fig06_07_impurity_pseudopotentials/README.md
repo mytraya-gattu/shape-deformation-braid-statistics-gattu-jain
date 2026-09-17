@@ -1,7 +1,19 @@
 # Figs. 6 and 7: single-electron energies in impurity potentials
 
-Energies V_{n,m} of an electron in the n-th Landau level and the angular-momentum-m orbital about the impurity, for the Gaussian potential -exp(-r^2/2 sigma^2)/(2 pi sigma^2) (Fig. 6) and the Coulomb potential -1/sqrt(r^2 + d^2) (Fig. 7). Exact.
+Energies `V_{n,m}` of an electron in the n-th Landau level and angular-momentum-m orbital about the impurity. Results obtained analytically.
 
-Files: `gaussian_impurity_V_nm.csv` (columns `n`, `m`, `sigma_over_lB`, `V_nm`, in units of 1/lB^2) and `coulomb_impurity_V_nm.csv` (columns `n`, `m`, `d_over_lB`, `V_nm`, in units of 1/lB).
+## Files
+- `gaussian_impurity_V_nm.csv` (Fig. 6: Gaussian impurity `V(r) = -exp(-r^2/2 sigma^2) / (2 pi sigma^2)`)
+- `coulomb_impurity_V_nm.csv` (Fig. 7: Coulomb impurity `V(r) = -1 / sqrt(r^2 + d^2)`)
 
-Script: `impurity_pseudopotentials.jl` (repository `braiding_phase_mystery`).
+## Columns
+- **Gaussian (`gaussian_impurity_V_nm.csv`)**:
+  1. `n`: Landau level index
+  2. `m`: angular momentum index
+  3. `sigma / lB`: impurity width
+  4. `V_{n,m}`: energy in units of `lB^-2`
+- **Coulomb (`coulomb_impurity_V_nm.csv`)**:
+  1. `n`: Landau level index
+  2. `m`: angular momentum index
+  3. `d / lB`: setback distance
+  4. `V_{n,m}`: energy in units of `lB^-1`
