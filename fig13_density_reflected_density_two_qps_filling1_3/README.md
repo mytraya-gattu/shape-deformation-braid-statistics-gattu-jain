@@ -1,33 +1,11 @@
-# Fig. 13 -- density_reflected_density_two_qps_filling1_3.pdf
+# Fig. 13: two QPs at nu = 1/3
 
-Two quasiparticles at nu = 1/3 (N = 80, omega = 15.0 lB, k1 = 0, k2 in
-{0,1,2}), conventional construction. Same layout/convention as Fig. 11; the
-reflected-density guide overlay is derived from the stored column and not
-separately stored.
+Density `2 pi rho(x,0) lB^2` along the line joining two QPs at nu = 1/3, N = 80, at omega = -7.5 lB and +7.5 lB (k1 = 0, k2 = 0, 1, 2), conventional construction (Monte Carlo, CF wave functions on the disk).
 
-- Source script:
-  `authors-code/CompositeFermionsDisk/plot_post_processed_density.jl`
-  (the `let` block producing `density_reflected_density_two_qps_filling1_3.pdf`,
-  `density_tag = "two_qps_density"`, `N=80, omega=15.0`).
-- Source data:
-  `authors-code/CompositeFermionsDisk/post_processed_data/two_qps_density_N80_nu1_3_omega15.0_k1_0_k2_{0,1,2}_conventional.jld2`
+Files: `two_qps_density_N80_nu1_3_omega15.0_k1_0_k2_{0,1,2}_conventional.csv`. The file name gives N, nu, the intended separation (omega, in lB), k1, k2, and the construction.
 
-## Columns
+Columns: `x_over_lB`, `density_mean_2pi_rho_lB2`, `density_stderr`.
 
-| column | meaning | units |
-|---|---|---|
-| `x_over_lB` | disk-plane coordinate x | ell_B |
-| `density_mean_2pi_rho_lB2` | chain mean of 2*pi*rho(x,0)*ell_B^2 | dimensionless |
-| `density_stderr` | standard error of the mean, across chains | dimensionless |
+Error: mean and standard error over 200 independent chains. The curves in the figure are smoothed for display; the values here are the unsmoothed chain averages.
 
-## Statistical method
-
-Chain mean and standard error of the mean across N = 200 Monte Carlo chains
-(number of entries in `"source files"`; see `post_process` in
-`authors-code/CompositeFermionsDisk/post_processing.jl`).
-Only the chain mean and its standard error are stored, not the 200
-individual chain traces.
-
-Note: the rendered figure applies the same cosmetic smoothing filter as
-Fig. 11 (`smooth_density`); this CSV holds the raw, unsmoothed chain
-mean/stderr.
+Script: `plot_post_processed_density.jl` (repository `CompositeFermionsDisk`).
