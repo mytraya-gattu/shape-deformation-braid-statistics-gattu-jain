@@ -1,0 +1,8 @@
+.DS_Store
+*.jld2
+*.h5
+*.hdf5
+*.tar.gz
+__pycache__/
+.venv/
+latex_build/
